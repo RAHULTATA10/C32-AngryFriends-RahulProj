@@ -58,7 +58,7 @@ function setup(){
 
 function draw(){
     background(backgroundImg);
-    text("Score  " +score, 600, 100);
+    text("Score  " +score, 600, 30);
     Engine.update(engine);
 
     textSize(30);
