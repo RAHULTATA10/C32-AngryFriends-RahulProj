@@ -3,4 +3,5 @@ class Bench extends BaseClass {
       super(x,y,width,height);
       this.image = loadImage("sprites/bench.png");
     }
- };
+  
+  };

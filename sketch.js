@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var box1;
+var box1, log1;
 var backgroundImg,platform;
 var BALL, slingshot;
 var boy1, boy2, boy3, boy4, boy5;
@@ -24,8 +24,8 @@ function setup(){
     world = engine.world;
   
     ground = new Ground(600,height,1200,20);
-    invisground1 = new Ground(350,250,125,20);
-    invisground2 = new Ground(1075,180,125,20);
+    invisground1 = new Ground(300,250,150,20);
+    invisground2 = new Ground(1050,180,150,20);
     invisground3 = new Ground(1125,430,125,20);
 
     platform = new Ground(150, 305, 300, 170);
@@ -34,8 +34,8 @@ function setup(){
 
     boy1 = new Boy1(810, 350);
     boy2 = new Boy2(810, 220);
-    boy3 = new Boy3(350, 240);
-    boy4 = new Boy4(1075,145);
+    boy3 = new Boy3(300, 240);
+    boy4 = new Boy4(1050,145);
     boy5 = new Boy5(1070,400);
     
     box1 = new Box(700,320,70,70);
@@ -49,8 +49,8 @@ function setup(){
     log4 = new Log(760,120,150, PI/7);
     log5 = new Log(870,120,150, -PI/7);
 
-    bench1 = new Bench(350,240,100,80);
-    bench2 = new Bench(1075,150,100,80);
+    bench1 = new Bench(300,240,100,80);
+    bench2 = new Bench(1050,150,100,80);
     chair1 = new Chair1(1125,420,125,125);
     
     slingshot = new SlingShot(BALL.body,{x:200, y:50});
@@ -58,10 +58,10 @@ function setup(){
 
 function draw(){
     background(backgroundImg);
-    text("Score  " +score, 600, 30);
+    text("Score  " + score, 600, 50)
     Engine.update(engine);
 
-    textSize(20);
+    textSize(25);
     textFont("Verdana");
     stroke("red");
     fill("red");
@@ -89,37 +89,25 @@ function draw(){
     box4.display();
     box5.display();
     
-    box1.score();
-    box2.score();
-    box3.score();
-    box4.score();
-    box5.score();
-    
     log1.display();
     log3.display();
     log4.display();
     log5.display();
-    
-    log1.score();
-    log2.score();
-    log3.score();
-    log4.score();
-    
+
     bench1.display();
     bench2.display();
     chair1.display();
-    
-    bench1.score();
-    bench2.score();
-    chair1.score();
-  }
+
+    slingshot.display(); 
+}
+
 function mouseDragged(){
     if (gameState!=="launched"){
-        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+        Matter.Body.setPosition(BALL.body, {x: mouseX , y: mouseY});
     }
 }
 function mouseReleased(){
     slingshot.fly();
     gameState = "launched";
-}  
-    
+}
+

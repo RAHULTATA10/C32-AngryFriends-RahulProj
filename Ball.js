@@ -7,9 +7,7 @@ class Ball extends BaseClass {
   }
 
   display() {
-    //this.body.position.x = mouseX;
-    //this.body.position.y = mouseY;
-
+  
     super.display();
 
     if(this.body.velocity.x > 10 && this.body.position.x > 200){
