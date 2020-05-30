@@ -49,8 +49,8 @@ function setup(){
     log4 = new Log(760,120,150, PI/7);
     log5 = new Log(870,120,150, -PI/7);
 
-    bench1 = new Bench(375,240,100,80);
-    bench2 = new Bench(1050,150,100,80);
+    bench1 = new Bench(350,240,100,80);
+    bench2 = new Bench(1075,150,100,80);
     chair1 = new Chair1(1125,420,125,125);
     
     slingshot = new SlingShot(BALL.body,{x:200, y:50});
@@ -61,7 +61,7 @@ function draw(){
     text("Score  " +score, 600, 30);
     Engine.update(engine);
 
-    textSize(30);
+    textSize(20);
     textFont("Verdana");
     stroke("red");
     fill("red");
@@ -89,25 +89,37 @@ function draw(){
     box4.display();
     box5.display();
     
+    box1.score();
+    box2.score();
+    box3.score();
+    box4.score();
+    box5.score();
+    
     log1.display();
     log3.display();
     log4.display();
     log5.display();
-
+    
+    log1.score();
+    log2.score();
+    log3.score();
+    log4.score();
+    
     bench1.display();
     bench2.display();
     chair1.display();
-
-    slingshot.display(); 
-}
-
+    
+    bench1.score();
+    bench2.score();
+    chair1.score();
+  }
 function mouseDragged(){
     if (gameState!=="launched"){
-        Matter.Body.setPosition(BALL.body, {x: mouseX , y: mouseY});
+        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
     }
 }
 function mouseReleased(){
     slingshot.fly();
     gameState = "launched";
-}
-
+}  
+    
