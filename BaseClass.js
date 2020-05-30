@@ -1,9 +1,9 @@
 class BaseClass{
     constructor(x, y, width, height, angle) {
         var options = {
-            'restitution':0.08,
-            'friction':0.10,
-            'density':0.1
+            'restitution':8,
+            'friction':10,
+            'density':10
         }
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
