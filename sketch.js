@@ -24,8 +24,8 @@ function setup(){
     world = engine.world;
   
     ground = new Ground(600,height,1200,20);
-    invisground1 = new Ground(375,250,150,20);
-    invisground2 = new Ground(1050,180,150,20);
+    invisground1 = new Ground(350,250,125,20);
+    invisground2 = new Ground(1075,180,125,20);
     invisground3 = new Ground(1125,430,125,20);
 
     platform = new Ground(150, 305, 300, 170);
@@ -34,8 +34,8 @@ function setup(){
 
     boy1 = new Boy1(810, 350);
     boy2 = new Boy2(810, 220);
-    boy3 = new Boy3(375, 240);
-    boy4 = new Boy4(1050,145);
+    boy3 = new Boy3(350, 240);
+    boy4 = new Boy4(1075,145);
     boy5 = new Boy5(1070,400);
     
     box1 = new Box(700,320,70,70);
